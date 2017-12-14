@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">SmothViewpager</string>
+</resources>
+
+    <!--
+
+滑动
+
+滑动冲突产生的两个根本原因：
+    外部滑动方向与内部方向不一致：如外部的Scrollview或SwipeRefreshLayout嵌套内部的Viewpager或横向Recyclerview
+    外部滑动方向与内部方向一致：如外部Viewpager嵌套内部Viewpager
+
+扎心了，一不一致都可能造成滑动冲突。
+
+
+
+
+ScrollView嵌套Recyclerview，让Recyclerview不滑动，而是滑动ScrollView
+
+
+    /**
+     * @return Distance in pixels a touch can wander before we think the user is scrolling
+     */
+    public int getScaledTouchSlop() {
+        return mTouchSlop;
+    }
+    能触发滚动的最小距离,如果小于这个距离就不触发移动控件
+-->
